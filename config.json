@@ -1,0 +1,27 @@
+{
+    "name": "VLC",
+    "version": "dev",
+    "slug": "vlc",
+    "description": "Play multimedia using VLC player",
+    "url": "https://github.com/rokmohar/hassio-vlc",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "application",
+    "boot": "auto",
+    "options": {
+        "telnet_password": "mypassword",
+        "http_password": "mypassword",
+        "vlc_options": ""
+    },    
+    "schema": {
+        "telnet_password": "str",
+        "http_password": "str",
+        "vlc_options": "str"
+    },
+    "audio": true,
+    "ports":{
+        "9892/tcp":9892,
+        "4212/tcp":4212
+    },
+    "webui": "http://[HOST]:[PORT:9892]/",
+    "map": ["share:ro", "ssl"]
+  }
